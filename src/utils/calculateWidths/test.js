@@ -1,5 +1,5 @@
 import { assert } from "chai";
-import calculateWidths from "./calculateWidths";
+import calculateWidths from "./";
 
 describe("calculateWidths", () => {
   it("1 flexible gets the whole", () => {
