@@ -2,7 +2,7 @@ module.exports = {
   entry: "./index.js",
   output: {
     path: __dirname + "/dist",
-    filename: "space.js",
+    filename: "spaced.js",
     publicPath: "dist"
   },
   module: {

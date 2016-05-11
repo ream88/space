@@ -7,7 +7,7 @@ ReactDOM.render((
     <Fixed width={100}>
       <Fixed>/* </Fixed>
       <Flexible>-</Flexible>
-      <Fixed> space </Fixed>
+      <Fixed> spaced </Fixed>
       <Flexible>-</Flexible>
       <Fixed> */</Fixed>
     </Fixed>
