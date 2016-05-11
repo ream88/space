@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Fixed, Flexible } from "./src/components";
+import { Fixed, Flexible } from ".";
 
 ReactDOM.render((
   <pre>

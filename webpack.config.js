@@ -1,8 +1,13 @@
 module.exports = {
-  entry: "./index.js",
+  devtool: "source-map",
+  entry: {
+    spaced: "./src/components/index.js",
+    example: "./example.js"
+  },
   output: {
+    filename: "[name].js",
+    libraryTarget: "umd",
     path: __dirname + "/dist",
-    filename: "spaced.js",
     publicPath: "dist"
   },
   module: {
