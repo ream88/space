@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ream88/spaced.git"
+  },
   "scripts": {
     "lint": "eslint --fix src/**/*.js",
     "test": "mocha --require withDom.js --compilers js:babel-register src/**/test.js"
