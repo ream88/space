@@ -10,8 +10,7 @@ export default (widths, totalWidth) => {
   return widths
     .map(width => {
       if (!isFinite(width)) {
-        width = factor + rest;
-        rest = 0;
+        width = factor + (rest-- > 0 ? 1 : 0);
       }
       return width;
     });

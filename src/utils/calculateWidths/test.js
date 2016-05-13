@@ -37,4 +37,8 @@ describe("calculateWidths", () => {
   it("2 fixed and 2 flexible sum up to 99", () => {
     assert.deepEqual([1, 49, 48, 1], calculateWidths([1, Infinity, Infinity, 1], 99));
   });
+
+  it("splits the rest for all flexibles equaly", () => {
+    assert.deepEqual([33, 1, 33, 1, 32], calculateWidths([Infinity, 1, Infinity, 1, Infinity], 100));
+  });
 });
