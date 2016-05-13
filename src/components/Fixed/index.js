@@ -24,9 +24,10 @@ const Fixed = ({ children, width = calculateChildrenLength(children) }) => {
   }), width);
 
   children = children.map((child, i) => {
-    if (typeof child === "object") {
+    if (child.type === Fixed || child.type === Flexible) {
       return cloneElement(child, { key: i, width: widths[i] });
     }
+
     return child;
   });
 

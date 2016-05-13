@@ -59,4 +59,12 @@ describe("Fixed", () => {
 
     assert.equal(" bar ", wrapper.text());
   });
+
+  it("supports native HTML elements", () => {
+    const wrapper = mount((
+      <Fixed><a href="https://google.com">Google</a></Fixed>
+    ));
+
+    assert(wrapper.contains(<a href="https://google.com">Google</a>));
+  });
 });
