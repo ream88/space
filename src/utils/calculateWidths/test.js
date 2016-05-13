@@ -29,4 +29,12 @@ describe("calculateWidths", () => {
   it("2 fixed and 1 flexible sum up to 100", () => {
     assert.deepEqual([1, 98, 1], calculateWidths([1, Infinity, 1], 100));
   });
+
+  it("2 fixed and 2 flexible sum up to 100", () => {
+    assert.deepEqual([1, 49, 49, 1], calculateWidths([1, Infinity, Infinity, 1], 100));
+  });
+
+  it("2 fixed and 2 flexible sum up to 99", () => {
+    assert.deepEqual([1, 49, 48, 1], calculateWidths([1, Infinity, Infinity, 1], 99));
+  });
 });
