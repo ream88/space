@@ -51,4 +51,12 @@ describe("Fixed", () => {
     assert(wrapper.contains(<Fixed width={1}>a</Fixed>));
     assert(wrapper.contains(<Fixed width={1}>r</Fixed>));
   });
+
+  it("renders mixed children properly", () => {
+    const wrapper = mount((
+      <Fixed> <Fixed>bar</Fixed> </Fixed>
+    ));
+
+    assert.equal(" bar ", wrapper.text());
+  });
 });

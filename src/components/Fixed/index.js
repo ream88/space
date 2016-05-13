@@ -11,6 +11,10 @@ const Fixed = ({ children, width = calculateChildrenLength(children) }) => {
   children = Children.toArray(children); // 😩
 
   let widths = calculateWidths(children.map(child => {
+    if (typeof child === "string") {
+      return child.length;
+    }
+
     switch (child.type) {
     case Fixed:
       return calculateChildrenLength(child.props.children);
@@ -23,6 +27,7 @@ const Fixed = ({ children, width = calculateChildrenLength(children) }) => {
     if (typeof child === "object") {
       return cloneElement(child, { key: i, width: widths[i] });
     }
+    return child;
   });
 
   return (
