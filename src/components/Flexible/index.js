@@ -1,7 +1,8 @@
 import React, { PropTypes } from "react";
 import Fixed from "../Fixed";
+import calculateChildrenLength from "../../utils/calculateChildrenLength";
 
-const Flexible = ({ children, width = children.length }) => {
+const Flexible = ({ children, width = calculateChildrenLength(children) }) => {
   if (typeof children === "string") {
     children = new Array(width + 1).join(children).substring(0, width);
   }

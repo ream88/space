@@ -1,8 +1,9 @@
 import React, { cloneElement, PropTypes, Children } from "react";
 import Flexible from "../Flexible";
 import calculateWidths from "../../utils/calculateWidths";
+import calculateChildrenLength from "../../utils/calculateChildrenLength";
 
-const Fixed = ({ children, width = children.length }) => {
+const Fixed = ({ children, width = calculateChildrenLength(children) }) => {
   if (typeof children === "string") {
     return <span>{children.substring(0, width)}</span>;
   }
@@ -12,7 +13,7 @@ const Fixed = ({ children, width = children.length }) => {
   let widths = calculateWidths(children.map(child => {
     switch (child.type) {
     case Fixed:
-      return child.props.children.length;
+      return calculateChildrenLength(child.props.children);
     case Flexible:
       return Infinity;
     }

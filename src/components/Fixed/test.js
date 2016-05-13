@@ -1,6 +1,6 @@
 import React from "react";
 import { assert } from "chai";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import Fixed from "./";
 
 describe("Fixed", () => {
@@ -34,5 +34,21 @@ describe("Fixed", () => {
 
     assert(wrapper.contains(<Fixed width={3}>foo</Fixed>));
     assert(wrapper.contains(<Fixed width={3}>bar</Fixed>));
+  });
+
+  it("renders multiple deep nested Fixed's with a width prop", () => {
+    const wrapper = mount((
+      <Fixed>
+        <Fixed>
+          <Fixed>b</Fixed>
+          <Fixed>a</Fixed>
+          <Fixed>r</Fixed>
+        </Fixed>
+      </Fixed>
+    ));
+
+    assert(wrapper.contains(<Fixed width={1}>b</Fixed>));
+    assert(wrapper.contains(<Fixed width={1}>a</Fixed>));
+    assert(wrapper.contains(<Fixed width={1}>r</Fixed>));
   });
 });

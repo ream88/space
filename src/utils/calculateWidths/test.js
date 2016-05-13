@@ -41,4 +41,12 @@ describe("calculateWidths", () => {
   it("splits the rest for all flexibles equaly", () => {
     assert.deepEqual([33, 1, 33, 1, 32], calculateWidths([Infinity, 1, Infinity, 1, Infinity], 100));
   });
+
+  it("reduces flexible to 0 if necessary", () => {
+    assert.deepEqual([3, 0, 8, 0, 3], calculateWidths([3, Infinity, 8, Infinity, 3], 14));
+  });
+
+  it("reduces fixed until they match", () => {
+    assert.deepEqual([1, 0, 7, 0, 2], calculateWidths([3, Infinity, 8, Infinity, 3], 10));
+  });
 });
